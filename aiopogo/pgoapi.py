@@ -58,6 +58,9 @@ class PGoApi:
 
         await self.auth_provider.user_login(username, password)
 
+    def set_delay_handler(self, delay_handler):
+        self.state.delay_handler = delay_handler
+
     def set_position(self, lat, lon, alt=None):
         self.log.debug('Set Position - Lat: %s Lon: %s Alt: %s', lat, lon, alt)
         self.latitude = lat
